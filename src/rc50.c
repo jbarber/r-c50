@@ -187,9 +187,7 @@ int c50main()
 
     fprintf(Of, T_Time, ExecTime() - StartTime);
 
-#ifdef VerbOpt
     Cleanup();
-#endif
 
     return 0;
 }

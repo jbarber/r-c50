@@ -248,6 +248,16 @@ int rpredictmain (int *trials ,int *outputv ,double *confidencev)
     // XXX This causes a segfault, but need to verify that
     // XXX removing this doesn't cause a memory leak
     // FreeGlobals();
+
+    free(ClassSum);
+    free(Vote);
+
+    FreeNames();
+
+    ForEach(Trial, 0, TRIALS-1) {
+        FreeTree(Pruned[Trial]);
+    }
+    free(Pruned);
     
     return 0;
 }

@@ -133,6 +133,7 @@ static void c50(char **namesv,
     *outputv = output;
 
     // We reinitialize the globals on exit out of general paranoia
+    strbuf_destroy(sb_datav);
     initglobals();
 }
 
